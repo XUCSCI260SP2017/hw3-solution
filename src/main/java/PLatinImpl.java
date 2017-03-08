@@ -24,7 +24,12 @@ public class PLatinImpl implements PLatin {
   }
 
   @Override public String revert(String latin) {
-    return null;
+    String[] words = latin.split(" ");
+    String[] ays = words[1].split("ay");
+
+    if("way".equals(words[1]))
+      return words[0];
+    return ays[0]+words[0];
   }
 
   @Override public String process(String string) {
